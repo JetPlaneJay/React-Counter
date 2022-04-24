@@ -1,24 +1,24 @@
 import React from "react"
 
 export default function App() {
-        
-         const [isImportant, setIsImportant] = React.useState(0)
-         
-         function handleClick() {
-             setIsImportant(isImportant + 1)
-         }
-         
-         function handlingClick() {
-             setIsImportant(isImportant -1)
-         }
+    const [count, setCount] = React.useState(0)
 
+    function add() {
+        setCount(prevCount => prevCount + 1)
+    }
+    // Challenge: update `substract` to use a callback function
+    
+    function subtract() {
+        setCount(prevCount => prevCount - 1)
+    }
+    
     return (
         <div className="counter">
-            <button className="counter--minus" onClick={handlingClick}>–</button>
+            <button className="counter--minus" onClick={subtract}>–</button>
             <div className="counter--count">
-                <h1>{isImportant}</h1>
+                <h1>{count}</h1>
             </div>
-            <button className="counter--plus" onClick={handleClick}>+</button>
+            <button className="counter--plus" onClick={add}>+</button>
         </div>
     )
 }

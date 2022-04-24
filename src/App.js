@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App() {
+        
+         const [isImportant, setIsImportant] = React.useState(0)
+         
+         function handleClick() {
+             setIsImportant(isImportant + 1)
+         }
+         
+         function handlingClick() {
+             setIsImportant(isImportant -1)
+         }
+
+    return (
+        <div className="counter">
+            <button className="counter--minus" onClick={handlingClick}>–</button>
+            <div className="counter--count">
+                <h1>{isImportant}</h1>
+            </div>
+            <button className="counter--plus" onClick={handleClick}>+</button>
+        </div>
+    )
 }
-
-export default App;
